@@ -7,30 +7,6 @@ interface Props {
 
 }
 
-/* const Button: React.FC<Props> = ({ 
-    border,
-    color,
-    children,
-    height,
-    onClick, 
-    radius,
-    width
-  }) => { 
-  return (
-    <button 
-      onClick={onClick}
-      style={{
-         backgroundColor: color,
-         border,
-         borderRadius: radius,
-         height,
-         width
-      }}
-    >
-    {children}
-    </button>
-  );
-} */
 
 const TitleStyled: React.FC<Props> = styled.h5<Props>`
   color: #646565;
@@ -39,6 +15,7 @@ const TitleStyled: React.FC<Props> = styled.h5<Props>`
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
+  margin: 0;
 `;
 
 

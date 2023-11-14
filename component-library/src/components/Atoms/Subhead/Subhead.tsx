@@ -39,6 +39,7 @@ const SubheadStyled: React.FC<Props> = styled.h6<Props>`
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+  margin: 0;
 `;
 
 

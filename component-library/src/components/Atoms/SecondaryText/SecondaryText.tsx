@@ -38,7 +38,9 @@ const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
-  padding: 8px 13px 9px 17px;
+  padding: 17px 24px 13px 25px;
+  box-sizing: border-box;
+  margin: 0;
 `;
 
 

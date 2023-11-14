@@ -8,30 +8,7 @@ interface Props {
 
 }
 
-/* const Button: React.FC<Props> = ({ 
-    border,
-    color,
-    children,
-    height,
-    onClick, 
-    radius,
-    width
-  }) => { 
-  return (
-    <button 
-      onClick={onClick}
-      style={{
-         backgroundColor: color,
-         border,
-         borderRadius: radius,
-         height,
-         width
-      }}
-    >
-    {children}
-    </button>
-  );
-} */
+
 
 const StyledButton: React.FC<Props> = styled.button<Props>`
   background-color: ${(props) => (props.primary ? '#5DA552' : 'transparent' )};
@@ -39,7 +16,7 @@ const StyledButton: React.FC<Props> = styled.button<Props>`
   border: ${(props) => (props.primary ? 'none' : 'none' )};
   border-radius: 20px;
   cursor: pointer;
-  padding: ${(props) => (props.primary ? '11px 54px' : '11px 24px' )};
+  padding: ${(props) => (props.primary ? '11px 54px' : '7px 12px' )};
   text-align: center;
   font-size: 12px;
   font-style: normal;

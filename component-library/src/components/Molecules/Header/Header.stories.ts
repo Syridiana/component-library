@@ -1,5 +1,5 @@
 // YourComponent.stories.ts|tsx
-
+import avatar from '../../../assets/avatar.png'
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Header from "./Header.tsx";
@@ -15,8 +15,9 @@ type Story = StoryObj<typeof Header>;
 export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    primary: true,
-    children: 'LOG IN'
+    avatar: avatar,
+    titleContent: 'Headline 5',
+    subheadContent: 'Subtitle'
   },
 };
 

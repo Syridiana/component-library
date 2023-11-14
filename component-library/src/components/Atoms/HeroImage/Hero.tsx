@@ -5,7 +5,6 @@ import styled from 'styled-components';
 interface Props {
   children?: React.ReactNode;
 /*   onClick: () => void; */
-  primary: boolean;
   hero: string
 }
 
@@ -13,7 +12,8 @@ interface Props {
 const HeroImage = styled.img.attrs<Props>((props) => ({
   src: props.hero,
 }))`
-  height: 100%
+  min-height: 232px;
+  width: 100%;
 `;
 
 const HeroWrapper = styled.div<Props>`
@@ -23,6 +23,7 @@ const HeroWrapper = styled.div<Props>`
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 232px;
 `;
 
 

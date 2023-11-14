@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import Button from "../../Atoms/Button/Button";
 import Icon from "../../Atoms/Favorite/Icon";
 
-/* interface Props {
-  children?: React.ReactNode;
-  onClick: () => void;
-  primary: boolean;
-} */
+interface Props {
+  favouriteIcon: string
+}
 
 /* const Button: React.FC<Props> = ({ 
     border,
@@ -37,20 +35,22 @@ import Icon from "../../Atoms/Favorite/Icon";
 
 const StyledAction: React.FC = styled.div`
   display: flex;
-  padding: 20px 16px;
+  padding: 16px 20px 16px 8px;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 
-const Action: React.FC = (/* props: Props */) => {
+const Action: React.FC<Props> = (props: Props) => {
     return (
       <StyledAction>
         <div>
           <Button primary={false} children={'ACTION 1'} />
-          <Button primary={false} children={'ACTION 1'} />
+          <Button primary={false} children={'ACTION 2'} />
         </div>
-        <Icon />
+        <Icon favouriteIcon={props.favouriteIcon} />
       </StyledAction>
     );
   };

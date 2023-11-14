@@ -15,7 +15,8 @@ type Story = StoryObj<typeof InputComponent>;
 export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor'
+    type: 'email',
+    label: 'Email'
   },
 };
 

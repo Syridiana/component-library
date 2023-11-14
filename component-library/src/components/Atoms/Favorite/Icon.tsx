@@ -7,36 +7,11 @@ interface Props {
   favouriteIcon: string
 }
 
-/* const Button: React.FC<Props> = ({ 
-    border,
-    color,
-    children,
-    height,
-    onClick, 
-    radius,
-    width
-  }) => { 
-  return (
-    <button 
-      onClick={onClick}
-      style={{
-         backgroundColor: color,
-         border,
-         borderRadius: radius,
-         height,
-         width
-      }}
-    >
-    {children}
-    </button>
-  );
-} */
-
 
 const Icon = styled.img.attrs<Props>((props) => ({
   src: props.favouriteIcon,
 }))`
-width: 24px;
+  width: 24px;
 `;
 
 
