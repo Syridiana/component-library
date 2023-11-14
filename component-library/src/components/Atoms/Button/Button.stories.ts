@@ -12,9 +12,20 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const FirstStory: Story = {
+export const PrimaryButton: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    bgcolor: "#000"
+    primary: true,
+    children: 'LOG IN'
+  },
+};
+
+
+
+export const SecondaryButton: Story = {
+  args: {
+    //👇 The args you need here will depend on your component
+    primary: false,
+    children: 'SIGN UP'
   },
 };

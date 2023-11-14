@@ -2,14 +2,9 @@ import React from "react";
 import styled from 'styled-components';
 
 interface Props {
-  border: string;
-  bgcolor: string;
-  color: string;
   children?: React.ReactNode;
-  height: string;
-  onClick: () => void;
-  radius: string
-  width: string;
+/*   onClick: () => void; */
+
 }
 
 /* const Button: React.FC<Props> = ({ 
@@ -37,18 +32,18 @@ interface Props {
   );
 } */
 
-const StyledButton = styled.button<Props>`
-  padding: 10px 20px;
-  background-color: ${(props) => (props.bgcolor)};
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+const TitleStyled: React.FC<Props> = styled.h5<Props>`
+  color: #646565;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
 `;
 
 
-const Button = (props) => {
-    return <StyledButton bgcolor={props.bgcolor}>¡Botón con estilo!</StyledButton>;
+const Title: React.FC<Props> = (props: Props) => {
+    return <TitleStyled>{props.children}</TitleStyled>;
   };
 
-export default Button;
+export default Title;
