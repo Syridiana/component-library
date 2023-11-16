@@ -5,12 +5,12 @@ import { InputAdornment, IconButton } from "@mui/material";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
-interface Props {
+export interface PassPropsI {
   type: string,
   variant?: string, 
   label: string,
   InputProps?: InputProp,
-  visible?: boolean
+  fullWidth?: boolean
 }
 
 interface InputProp extends InputHTMLAttributes<HTMLInputElement>{
@@ -18,13 +18,13 @@ interface InputProp extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 
-const InputStyled: React.FC<Props> = styled(TextField)<Props>`
+const InputStyled: React.FC<PassPropsI> = styled(TextField)<PassPropsI>`
   border-radius: 4px!important;
 `;
 
 
 
-const PasswordInput: React.FC<Props> = (props: Props) => {
+const PasswordInput: React.FC<PassPropsI> = (props: PassPropsI) => {
     const [visible, setVisible] = useState<boolean>(false);
 
     const EndAdornment = () => {

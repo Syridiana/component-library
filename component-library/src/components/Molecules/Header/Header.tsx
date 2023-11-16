@@ -10,11 +10,11 @@ interface Props {
   titlecontent: string;
 }
 
-const StyledHeader: React.FC<props> = styled.div`
+const StyledHeader: React.FC<Props> = styled.div`
   display: flex;
   padding: 16px;
   flex-direction: row;
-  height: 72px;
+  min-height: 72px;
   align-items: center;
   gap: 16px;
   justify-content: flex-start;
@@ -29,13 +29,13 @@ const StyledWrapper: React.FC<Props> = styled.div<Props>`
 `;
 
 
-const Header: React.FC<Props> = (props: Props) => {
+const Header: React.FC<Props> = ({avatar, titlecontent, subheadcontent}, {...props}) => {
     return (
       <StyledHeader {...props}>
-          <Avatar avatar={props.avatar} />
+          <Avatar avatar={avatar} />
           <StyledWrapper {...props}>
-            <Title textnode={props.titlecontent}  />
-            <Subhead textnode={props.subheadcontent} />
+            <Title textnode={titlecontent}  />
+            <Subhead textnode={subheadcontent} />
           </StyledWrapper>
       </StyledHeader>
     );

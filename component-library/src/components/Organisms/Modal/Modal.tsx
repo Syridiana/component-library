@@ -8,6 +8,8 @@ import Button from "../../Atoms/Button/Button";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import { ButtonPropsI } from "../../Atoms/Button/Button";
+import { motion } from 'framer-motion';
 
 interface Props {
   onClick: () => void,
@@ -23,7 +25,8 @@ interface Props {
   primary: number,
   textnode: string,
   children: React.ReactNode,
-  open: boolean
+  open: boolean,
+  buttonProps: ButtonPropsI
 }
 
 
@@ -31,14 +34,14 @@ const StyledHeader: React.FC<Props> = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 374px;
+  width: 100%;
   padding: 16px;
   box-sizing: border-box;
   align-items: center;
 `;
 
-const StyledAction: React.FC<Props> = styled.div`
-  height: 72px;
+const StyledAction: React.FC<ButtonPropsI> = styled.div`
+  min-height: 72px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -55,7 +58,7 @@ const StyledWrapper: React.FC<Props> = styled.div`
   padding: 0 24px 0 16px;
   width: 100%;
   box-sizing: border-box;
-  height: 258px;
+  min-height: 258px;
   justify-content: center;
   gap: 24px;
 `;
@@ -74,7 +77,9 @@ const style = {
 
 
 
-const ModalElement: React.FC<Props> = (props: Props) => {
+const ModalElement: React.FC<Props> = 
+    ({titlecontent, subheadcontent, passlabel, passtype, emaillabel, 
+      emailtype, primary, primarybtn, textnode, textnodebtn}, {...props}) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -82,21 +87,24 @@ const ModalElement: React.FC<Props> = (props: Props) => {
     return (
       <div>
       <button onClick={handleOpen}>Open modal</button>
-      <Modal {...props} open={open} onClose={handleClose} >
-      <Box sx={style}>
-        <StyledHeader {...props}>
-          <Title textnode={props.titlecontent} />
-          <CloseRoundedIcon onClick={handleClose} sx={{cursor: 'pointer'}}/>
-        </StyledHeader>
-        <StyledWrapper {...props}>
-          <Subhead textnode={props.subheadcontent} />
-          <TextInput type={props.emailtype} label={props.emaillabel} />
-          <PasswordInput type={props.passtype} label={props.passlabel} />
-        </StyledWrapper>
-        <StyledAction {...props}>
-          <Button textnode={props.textnode} primary={props.primary} />
-          <Button textnode={props.textnodebtn} primary={props.primarybtn} />
-        </StyledAction>
+      <Modal {...props} open={open} onClose={handleClose} initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} >
+        <Box sx={style}>
+          <StyledHeader {...props}>
+            <Title textnode={titlecontent} />
+            <motion.div whileHover={{ scale: 1.1, rotate: 90 }}   whileTap={{ scale: 0.9 }} style={{ originX: 0.5, originY: 0.5, height: 24 }}>
+              <CloseRoundedIcon onClick={handleClose} sx={{cursor: 'pointer'}}/>
+            </motion.div>
+          </StyledHeader>
+          <StyledWrapper {...props}>
+            <Subhead textnode={subheadcontent} />
+            <TextInput type={emailtype} label={emaillabel} />
+            <PasswordInput type={passtype} label={passlabel} />
+          </StyledWrapper>
+          <StyledAction {...props}>
+            <Button textnode={textnode} primary={primary} />
+            <Button textnode={textnodebtn} primary={primarybtn} />
+          </StyledAction>
         </Box>
       </Modal>
 

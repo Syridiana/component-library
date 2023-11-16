@@ -1,14 +1,16 @@
 import React from "react";
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-interface Props {
+
+export interface ButtonPropsI {
   primary: number,
   textnode: string,
 }
 
 
 
-const StyledButton: React.FC<Props> = styled.button<Props>`
+const StyledButton: React.FC<ButtonPropsI> = styled(motion.button)<ButtonPropsI>`
   background-color: ${(props) => (props.primary ? '#5DA552' : 'transparent' )};
   color: ${(props) => (props.primary ? 'white' : '#5DA552' )};
   border: none;
@@ -21,16 +23,38 @@ const StyledButton: React.FC<Props> = styled.button<Props>`
   font-weight: 400;
   line-height: 18px;
   box-sizing: border-box;
+  
+  
+  &:focus {
+    outline: 0px auto -webkit-focus-ring-color!important;
+  }
 
   &:hover{
     background-color: ${(props) => (props.primary ? '#A8A29D' : 'transparent' )};
-    box-shadow: ${(props) => (props.primary ? 'none' : '0px -3px 0px -1px #5DA552 inset' )};
+  }
+
+
+  &:after {
+      content: '';
+      display: ${(props) => (props.primary ? 'none' : 'block' )};
+      width: 0;
+      height: 2px;
+      background: #5DA552;
+      transition: width ease-in-out .2s;
+      position: relative;
+      top: 6px;
+      left: -1px;
+  }
+
+  &:hover:after {
+      width: 100%;
   }
 `;
 
 
-const Button: React.FC<Props> = (props: Props) => {
-    return <StyledButton {...props}>{props.textnode}</StyledButton>;
+const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
+    return <StyledButton {...props} 
+    whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>{props.textnode}</StyledButton>;
   };
 
 export default Button;

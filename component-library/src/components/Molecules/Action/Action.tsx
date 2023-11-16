@@ -18,14 +18,14 @@ const StyledAction: React.FC<Props> = styled.div<Props>`
 `;
 
 
-const Action: React.FC<Props> = (props: Props) => {
+const Action: React.FC<Props> = ({favouriteicon}, {...props}) => {
     return (
       <StyledAction {...props}>
         <div>
           <Button primary={0} textnode={'ACTION 1'} />
           <Button primary={0} textnode={'ACTION 2'} />
         </div>
-        <Icon favouriteicon={props.favouriteicon} />
+        <Icon favouriteicon={favouriteicon} />
       </StyledAction>
     );
   };

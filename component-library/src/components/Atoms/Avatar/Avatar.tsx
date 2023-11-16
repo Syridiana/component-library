@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 
-interface Props {
-  primary?: boolean;
+export interface AvatarPropsI {
   avatar: string
 }
 
 
-const Avatar = styled.img.attrs<Props>((props) => ({
-  src: props.avatar,
+const Avatar = styled.img.attrs<AvatarPropsI>(({avatar}) => ({
+  src: avatar,
 }))`
     border-radius: 100px;
     width: 40px;
