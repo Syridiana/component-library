@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-
 export interface AvatarPropsI {
   avatar: string
 }
-
 
 const Avatar = styled.img.attrs<AvatarPropsI>(({avatar}) => ({
   src: avatar,
@@ -13,8 +11,5 @@ const Avatar = styled.img.attrs<AvatarPropsI>(({avatar}) => ({
     width: 40px;
     height: 40px;
   `;
-
-
-
 
 export default Avatar;

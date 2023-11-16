@@ -5,7 +5,6 @@ interface Props {
   textnode: string
 }
 
-
 const TitleStyled: React.FC<Props> = styled.h5<Props>`
   color: #646565;
   font-family: Open Sans;
@@ -15,7 +14,6 @@ const TitleStyled: React.FC<Props> = styled.h5<Props>`
   line-height: 100%;
   margin: 0;
 `;
-
 
 const Title: React.FC<Props> = (props: Props) => {
     return <TitleStyled {...props}>{props.textnode}</TitleStyled>;

@@ -1,10 +1,10 @@
 import React, { useState, FocusEvent } from "react";
 import styled from 'styled-components';
-import TextField from '@mui/material/TextField';
+import TextField, { BaseTextFieldProps } from '@mui/material/TextField';
 
-interface Props {
+interface Props extends BaseTextFieldProps {
   type: string,
-  variant?: string, 
+  variant?: "filled" | "standard" | "outlined" | undefined, 
   label: string,
   inputProps?: {
     style: {
@@ -22,13 +22,19 @@ const TextInput: React.FC<Props> = ({type, label}) => {
     const [hasError, setHasError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
-    return <InputStyled type={type} variant="filled" label={label} 
-    inputProps={{ style: { color: "#0000008a", } }} error={hasError} helperText={errorMessage} fullWidth 
-      onBlur={(e: FocusEvent<HTMLInputElement>) => {
-       if(e?.target?.value?.length <= 0) 
-       { setHasError(true); setErrorMessage('Value requiered') } 
-       else { setHasError(false); setErrorMessage('') }
-    }}/>;
+    return <InputStyled 
+              type={type} 
+              variant="filled" 
+              label={label} 
+              inputProps={{ style: { color: "#0000008a", } }} 
+              error={hasError} 
+              helperText={errorMessage} 
+              fullWidth 
+              onBlur={(e: FocusEvent<HTMLInputElement>) => {
+                if(e.target.value.length <= 0) 
+                { setHasError(true); setErrorMessage('Value requiered') } 
+                else { setHasError(false); setErrorMessage('') }
+            }}/>;
   };
 
 export default TextInput;

@@ -19,8 +19,6 @@ const IconStyled = styled(ReactSVG).attrs<Props>((props) => ({
     fill: ${props => props.color}
   }
 
-
-  }
 `;
 
 
@@ -28,18 +26,20 @@ const Icon: React.FC<Props> = ({color, favouriteicon}, {...props}) => {
   const [newColor, setColor] = useState(color);
 
   return (
-  <motion.div  whileHover={{ scale: 1.1, rotate: 15 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}
-  whileTap={{ scale: 0.9 }}>
-      <IconStyled {...props} color={newColor} favouriteicon={favouriteicon} 
-    onClick={() => {
-      if(newColor === '#EB5757') {
-        setColor(color)
-      } else {
-        setColor('#EB5757')
-      }
-    }}
-    />
-  </motion.div>
+    <motion.div 
+      whileHover={{ scale: 1.1, rotate: 15 }} 
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      whileTap={{ scale: 0.9 }}>
+          <IconStyled {...props} color={newColor} favouriteicon={favouriteicon} 
+              onClick={() => {
+                if(newColor === '#EB5757') {
+                  setColor(color)
+                } else {
+                  setColor('#EB5757')
+                }
+              }}
+        />
+    </motion.div>
   )
 };
 

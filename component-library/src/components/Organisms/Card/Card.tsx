@@ -24,15 +24,19 @@ const StyledCard: React.FC<Props> = styled(motion.div)<Props>`
   box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.10);
 `;
 
-
 const Card: React.FC<Props> = ({hero, titlecontent, secondarytext, subheadcontent, avatar, icon}, {...props}) => {
     return (
-      <StyledCard {...props} initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} >
-          {hero ? (<Hero hero={hero} />) : (<></>)}
-          <Header titlecontent={titlecontent} subheadcontent={subheadcontent} avatar={avatar}   />
-          <SecondaryText textnode={secondarytext}  />
-          <Action favouriteicon={icon} />
+      <StyledCard {...props} 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: .5 }} >
+              {hero ? (<Hero hero={hero} />) : (<></>)}
+              <Header 
+                  titlecontent={titlecontent} 
+                  subheadcontent={subheadcontent} 
+                  avatar={avatar}   />
+              <SecondaryText textnode={secondarytext}  />
+              <Action favouriteicon={icon} />
       </StyledCard>
     );
   };

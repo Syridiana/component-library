@@ -5,7 +5,6 @@ interface Props {
   textnode: string
 }
 
-
 const SubheadStyled: React.FC<Props> = styled.h6<Props>`
   color: #646565;
   font-family: Open Sans;
@@ -15,7 +14,6 @@ const SubheadStyled: React.FC<Props> = styled.h6<Props>`
   line-height: 1.28;
   margin: 0;
 `;
-
 
 const Subhead: React.FC<Props> = (props: Props) => {
     return <SubheadStyled {...props}>{props.textnode}</SubheadStyled>;

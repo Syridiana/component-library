@@ -17,7 +17,6 @@ const StyledAction: React.FC<Props> = styled.div<Props>`
   align-items: center;
 `;
 
-
 const Action: React.FC<Props> = ({favouriteicon}, {...props}) => {
     return (
       <StyledAction {...props}>

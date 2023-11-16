@@ -5,8 +5,6 @@ interface Props {
   textnode: string;
 }
 
-
-
 const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
   color: #646565;
   font-size: 14px;
@@ -17,7 +15,6 @@ const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
   box-sizing: border-box;
   margin: 0;
 `;
-
 
 const SecondaryText: React.FC<Props> = (props: Props) => {
     return <SecondaryTextStyled {...props}>{props.textnode}</SecondaryTextStyled>;

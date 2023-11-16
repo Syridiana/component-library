@@ -1,11 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
 
-export interface ButtonPropsI {
+export interface ButtonPropsI extends React.PropsWithChildren, HTMLMotionProps<"div"> {
   primary: number,
-  textnode: string,
+  textnode?: string,
+  children?: React.ReactNode;
 }
 
 
@@ -51,10 +52,13 @@ const StyledButton: React.FC<ButtonPropsI> = styled(motion.button)<ButtonPropsI>
   }
 `;
 
-
 const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
-    return <StyledButton {...props} 
-    whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>{props.textnode}</StyledButton>;
+    return <StyledButton  
+      primary={props.primary}
+      whileTap={{ scale: 0.9 }} 
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+        {props.textnode}
+    </StyledButton>;
   };
 
 export default Button;
