@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 
 interface Props {
-  children?: React.ReactNode;
-/*   onClick: () => void; */
   hero: string
 }
 
@@ -29,7 +27,7 @@ const HeroWrapper = styled.div<Props>`
 
   const Hero: React.FC<Props> = (props: Props) => {
     return (
-      <HeroWrapper>
+      <HeroWrapper {...props}>
         <HeroImage hero={props.hero} />
       </HeroWrapper>
     )

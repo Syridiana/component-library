@@ -5,14 +5,12 @@ import Title from "../../Atoms/Title/Title";
 import Subhead from "../../Atoms/Subhead/Subhead";
 
 interface Props {
-  children?: React.ReactNode;
-  onClick: () => void;
   avatar: string;
-  subheadContent: string;
-  titleContent: string;
+  subheadcontent: string;
+  titlecontent: string;
 }
 
-const StyledHeader: React.FC = styled.div`
+const StyledHeader: React.FC<props> = styled.div`
   display: flex;
   padding: 16px;
   flex-direction: row;
@@ -24,20 +22,20 @@ const StyledHeader: React.FC = styled.div`
   box-sizing: border-box;
 `;
 
-const StyledWrapper: React.FC = styled.div`
+const StyledWrapper: React.FC<Props> = styled.div<Props>`
   display: flex;
   flex-direction: column;
   gap: 5px;
 `;
 
 
-const Header: React.FC = (props: Props) => {
+const Header: React.FC<Props> = (props: Props) => {
     return (
-      <StyledHeader>
+      <StyledHeader {...props}>
           <Avatar avatar={props.avatar} />
-          <StyledWrapper>
-            <Title children={props.titleContent}  />
-            <Subhead children={props.subheadContent} />
+          <StyledWrapper {...props}>
+            <Title textnode={props.titlecontent}  />
+            <Subhead textnode={props.subheadcontent} />
           </StyledWrapper>
       </StyledHeader>
     );

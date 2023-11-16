@@ -16,8 +16,8 @@ export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
     avatar: avatar,
-    titleContent: 'Headline 5',
-    subheadContent: 'Subtitle'
+    titlecontent: 'Headline 5',
+    subheadcontent: 'Subtitle'
   },
 };
 

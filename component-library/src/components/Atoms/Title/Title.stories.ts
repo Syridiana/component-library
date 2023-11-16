@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Title>;
 export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    children: 'Subtitle'
+    textnode: 'Subtitle'
   },
 };
 

@@ -18,10 +18,21 @@ export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
     avatar: avatar,
-    titleContent: 'Headline 5',
-    subheadContent: 'Subtitle',
+    titlecontent: 'Headline 5',
+    subheadcontent: 'Subtitle',
     hero: hero,
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor',
+    secondarytext: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor',
+    icon: favoriteIcon
+  },
+};
+
+export const SecondStory: Story = {
+  args: {
+    //👇 The args you need here will depend on your component
+    avatar: avatar,
+    titlecontent: 'Headline 5',
+    subheadcontent: 'Subtitle',
+    secondarytext: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor',
     icon: favoriteIcon
   },
 };

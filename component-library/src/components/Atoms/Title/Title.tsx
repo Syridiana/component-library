@@ -2,9 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 interface Props {
-  children?: React.ReactNode;
-/*   onClick: () => void; */
-
+  textnode: string
 }
 
 
@@ -20,7 +18,7 @@ const TitleStyled: React.FC<Props> = styled.h5<Props>`
 
 
 const Title: React.FC<Props> = (props: Props) => {
-    return <TitleStyled>{props.children}</TitleStyled>;
+    return <TitleStyled {...props}>{props.textnode}</TitleStyled>;
   };
 
 export default Title;

@@ -15,7 +15,7 @@ type Story = StoryObj<typeof SecondaryText>;
 export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor'
+    textnode: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor'
   },
 };
 

@@ -2,35 +2,10 @@ import React from "react";
 import styled from 'styled-components';
 
 interface Props {
-  children?: React.ReactNode;
-/*   onClick: () => void; */
-
+  textnode: string;
 }
 
-/* const Button: React.FC<Props> = ({ 
-    border,
-    color,
-    children,
-    height,
-    onClick, 
-    radius,
-    width
-  }) => { 
-  return (
-    <button 
-      onClick={onClick}
-      style={{
-         backgroundColor: color,
-         border,
-         borderRadius: radius,
-         height,
-         width
-      }}
-    >
-    {children}
-    </button>
-  );
-} */
+
 
 const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
   color: #646565;
@@ -45,7 +20,7 @@ const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
 
 
 const SecondaryText: React.FC<Props> = (props: Props) => {
-    return <SecondaryTextStyled>{props.children}</SecondaryTextStyled>;
+    return <SecondaryTextStyled {...props}>{props.textnode}</SecondaryTextStyled>;
   };
 
 export default SecondaryText;

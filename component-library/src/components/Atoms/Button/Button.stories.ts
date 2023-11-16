@@ -15,8 +15,8 @@ type Story = StoryObj<typeof Button>;
 export const PrimaryButton: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    primary: true,
-    children: 'LOG IN'
+    primary: 1,
+    textnode: 'LOG IN'
   },
 };
 
@@ -25,7 +25,7 @@ export const PrimaryButton: Story = {
 export const SecondaryButton: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    primary: false,
-    children: 'SIGN UP'
+    primary: 0,
+    textnode: 'SIGN UP'
   },
 };

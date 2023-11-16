@@ -16,6 +16,7 @@ export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
     width: '50px',
-    favouriteIcon: favouriteIcon
+    favouriteicon: favouriteIcon,
+    color: '#A8A29D'
   },
 };

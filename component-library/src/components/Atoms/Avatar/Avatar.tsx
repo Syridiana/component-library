@@ -1,11 +1,8 @@
-import React from "react";
 import styled from 'styled-components';
 
 
 interface Props {
-  children?: React.ReactNode;
-/*   onClick: () => void; */
-  primary: boolean;
+  primary?: boolean;
   avatar: string
 }
 
