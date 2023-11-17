@@ -1,35 +1,34 @@
 import React from "react";
 import styled from 'styled-components'; 
 import Title from "../../Atoms/Title/Title";
-import Subhead from "../../Atoms/Subhead/Subhead";
-import TextInput from "../../Atoms/Input/TextInput/TextInput";
-import PasswordInput from "../../Atoms/Input/Password/PasswordInput";
-import Button from "../../Atoms/Button/Button";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { ButtonPropsI } from "../../Atoms/Button/Button";
 import { motion } from 'framer-motion';     
 import close from '../../../assets/close.svg';
 import Slide from '@mui/material/Slide';
+import LoginForm from "../../Molecules/LoginForm/LoginForm";
+import ActionForm from "../../Molecules/ActionForm/ActionForm";
 
 
 interface Props extends React.PropsWithChildren {
   onClick: () => void,
   onClose: () => void,
-  subheadcontent: string,
   titlecontent: string,
-  emailtype: string,
-  emaillabel: string,
-  passlabel: string,
-  passtype: string,
   primarybtn: number,
   textnodebtn: string,
   primary: number,
   textnode: string,
   children: React.ReactNode,
   open: boolean,
-  buttonProps: ButtonPropsI
+  buttonProps: ButtonPropsI,
+  subheadcontent: string,
+  emailtype: string,
+  emaillabel: string,
+  passlabel: string,
+  passtype: string
 }
+
 
 const StyledHeader: React.FC<Props> = styled.div`
   display: flex;
@@ -38,29 +37,6 @@ const StyledHeader: React.FC<Props> = styled.div`
   width: 100%;
   padding: 16px;
   box-sizing: border-box;
-`;
-
-const StyledAction: React.FC<ButtonPropsI> = styled.div`
-  min-height: 72px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  padding: 16px 20px;
-  box-sizing: border-box;
-  align-items: center;
-  gap: 24px;
-`;
-
-const StyledWrapper: React.FC<Props> = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 24px 21px 16px;
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 253px;
-  justify-content: center;
-  gap: 24px;
 `;
 
 const style = {
@@ -94,19 +70,11 @@ const ModalElement: React.FC<Props> = (props: Props) => {
                         <img src={close} onClick={handleClose} style={{cursor: 'pointer' }}/>
                 </motion.div>
               </StyledHeader>
-              <StyledWrapper {...props}>
-                <Subhead textnode={props.subheadcontent} />
-                <TextInput type={props.emailtype} label={props.emaillabel} />
-                <PasswordInput type={props.passtype} label={props.passlabel} />
-              </StyledWrapper>
-              <StyledAction {...props}>
-                <Button textnode={props.textnode} primary={props.primary} />
-                <Button textnode={props.textnodebtn} primary={props.primarybtn} />
-              </StyledAction>
+              <LoginForm {...props} />
+              <ActionForm {...props} />
             </Box>
           </Slide >
       </Modal>
-
       </div>
     );
   };
