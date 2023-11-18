@@ -1,27 +1,12 @@
-# React + TypeScript + Vite
+# Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+There are two distinct groups within the "Organisms" category: "Modal" and "Cards."
 
-Currently, two official plugins are available:
+Within the Modal view, the "Open Modal" button triggers the display of the Modal element. Both the SIGN UP and LOGIN buttons feature hover and click events with animations. The email input activates an error display on the onBlur event if left empty. Additionally, both inputs respond to hover, focus, and blur events. In the password input, the eye icon button allows users to toggle the visibility of the password. The close icon exhibits a hover animation and serves to close the modal, which enters with a slide animation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For the Card element, there exist two versions—one with a hero image and one without. Both cards undergo a small in-animation when rendered. The action buttons and the Favorite icon within the cards incorporate hover and click animations.
 
-## Expanding the ESLint configuration
+Each Organism element comprises Molecules and Atom elements. Molecule elements, in turn, are composed of Atom elements. All Molecule and Atom elements are designed to be reusable and were crafted based on the received system of elements. Should the system expand, these elements may require minor style adjustments to align with the overarching system logic.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### The component library was crafted using React, Typescript, Styled Components, Material UI, Framer Motion, and Storybook.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
