@@ -4,7 +4,7 @@ There are two distinct groups within the "Organisms" category: "Modal" and "Card
 
 Within the Modal view, the "Open Modal" button triggers the display of the Modal element. Both the SIGN UP and LOGIN buttons feature hover and click events with animations. The email input activates an error display on the onBlur event if left empty. Additionally, both inputs respond to hover, focus, and blur events. In the password input, the eye icon button allows users to toggle the visibility of the password. The close icon exhibits a hover animation and serves to close the modal, which enters with a slide animation.
 
-For the Card element, there exist two versions—one with a hero image and one without. Both cards undergo a small in-animation when rendered. The action buttons and the Favorite icon within the cards incorporate hover and click animations.
+For the Card element, there exist two versions—one with a hero image and one without. Both cards undergo a small in-animation when rendered. The action buttons and the Favorite icon within the cards incorporate hover and click animations. Favorite's icon has two states that can be toggled with a click on the icon.
 
 Each Organism element comprises Molecules and Atom elements. Molecule elements, in turn, are composed of Atom elements. All Molecule and Atom elements are designed to be reusable and were crafted based on the received system of elements. Should the system expand, these elements may require minor style adjustments to align with the overarching system logic.
 
