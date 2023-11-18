@@ -28,13 +28,13 @@ const StyledWrapper: React.FC<Props> = styled.div<Props>`
 `;
 
 
-const Header: React.FC<Props> = ({avatar, titlecontent, subheadcontent}, {...props}) => {
+const Header: React.FC<Props> = (props: Props) => {
     return (
       <StyledHeader {...props}>
-          <Avatar avatar={avatar} />
+          <Avatar avatar={props.avatar} />
           <StyledWrapper {...props}>
-            <Title textnode={titlecontent}  />
-            <Subhead textnode={subheadcontent} />
+            <Title textnode={props.titlecontent}  />
+            <Subhead textnode={props.subheadcontent} />
           </StyledWrapper>
       </StyledHeader>
     );

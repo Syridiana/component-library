@@ -31,9 +31,11 @@ const TextInput: React.FC<Props> = ({type, label}) => {
               helperText={errorMessage} 
               fullWidth 
               onBlur={(e: FocusEvent<HTMLInputElement>) => {
-                if(e.target.value.length <= 0) 
-                { setHasError(true); setErrorMessage('Value required') } 
-                else { setHasError(false); setErrorMessage('') }
+                if(e.target.value.length <= 0) { 
+                  setHasError(true); setErrorMessage('Value required') 
+                } else { 
+                  setHasError(false); setErrorMessage('') 
+                }
             }}/>;
   };
 
