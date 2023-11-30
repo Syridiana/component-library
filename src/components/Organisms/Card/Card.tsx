@@ -7,25 +7,11 @@ import Header from "../../Molecules/Header/Header";
 import { motion } from 'framer-motion';
 
 interface Props extends React.PropsWithChildren {
-  subheadcontent: string;
-  titlecontent: string;
-  avatar: string;
-  hero?: string;
-  secondarytext: string;
-  icon: string;
-  flag: boolean,
-  initial: {
-    opacity: number;
-    y: number;
-  },
-  animate: {
-    opacity: number;
-    y: number;
-  },
-  transition: {
-    duration: number;
-  }
-
+  subheadcontent: string,
+  titlecontent: string,
+  avatar: string,
+  hero?: string,
+  secondarytext: string,
 }
 
 const StyledCard: React.FC<Props> = styled(motion.div)<Props>`

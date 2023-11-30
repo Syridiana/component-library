@@ -7,10 +7,8 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 
 export interface PassPropsI  {
   type: string,
-  variant?: string, 
   label: string,
   InputProps?: InputProp,
-  fullWidth?: boolean
 }
 
 interface InputProp extends InputHTMLAttributes<HTMLInputElement>{

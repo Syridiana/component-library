@@ -4,13 +4,7 @@ import TextField, { BaseTextFieldProps } from '@mui/material/TextField';
 
 interface Props extends BaseTextFieldProps {
   type: string,
-  variant?: "filled" | "standard" | "outlined" | undefined, 
   label: string,
-  inputProps?: {
-    style: {
-      color: string
-    },
-  }
 }
 
 const InputStyled: React.FC<Props> = styled(TextField)<Props>`

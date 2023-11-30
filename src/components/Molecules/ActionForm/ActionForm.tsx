@@ -4,9 +4,9 @@ import Button from "../../Atoms/Button/Button";
 
  interface Props extends React.PropsWithChildren {
   primarybtn: number,
-  textnodebtn: string,
+  textnodebtn1: string,
   primary: number,
-  textnode: string,
+  textnodebtn2: string,
 }
 
 const StyledAction: React.FC<Props> = styled.div`
@@ -24,8 +24,8 @@ const StyledAction: React.FC<Props> = styled.div`
 const ActionForm: React.FC<Props> = (props: Props) => {
     return (
       <StyledAction {...props}>
-        <Button textnode={props.textnode} primary={props.primary} />
-        <Button textnode={props.textnodebtn} primary={props.primarybtn} />
+        <Button textnode={props.textnodebtn2} primary={props.primary} />
+        <Button textnode={props.textnodebtn1} primary={props.primarybtn} />
       </StyledAction>
     );
   };

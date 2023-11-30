@@ -1,8 +1,8 @@
 // YourComponent.stories.ts|tsx
-
+import favouriteIcon from '../assets/Favorite.svg'
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Button from "./Button.tsx";
+import Button from "../components/Atoms/Favorite/Icon.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Button> = {
@@ -12,20 +12,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const PrimaryButton: Story = {
+export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    primary: 1,
-    textnode: 'LOG IN'
-  },
-};
-
-
-
-export const SecondaryButton: Story = {
-  args: {
-    //👇 The args you need here will depend on your component
-    primary: 0,
-    textnode: 'SIGN UP'
+    favouriteicon: favouriteIcon,
+    color: '#A8A29D'
   },
 };

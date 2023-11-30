@@ -16,17 +16,15 @@ interface Props extends React.PropsWithChildren {
   onClose: () => void,
   titlecontent: string,
   primarybtn: number,
-  textnodebtn: string,
+  textnodebtn1: string,
   primary: number,
-  textnode: string,
+  textnodebtn2: string,
   children: React.ReactNode,
   open: boolean,
   buttonProps: ButtonPropsI,
   subheadcontent: string,
-  emailtype: string,
   emaillabel: string,
   passlabel: string,
-  passtype: string
 }
 
 

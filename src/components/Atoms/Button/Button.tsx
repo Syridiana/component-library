@@ -1,9 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
-export interface ButtonPropsI extends React.PropsWithChildren, HTMLMotionProps<"div"> {
+export interface ButtonPropsI extends React.PropsWithChildren {
   primary: number,
   textnode?: string,
   children?: React.ReactNode;
