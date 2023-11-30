@@ -7,6 +7,7 @@ import Avatar from "../components/Atoms/Avatar/Avatar.tsx";
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
+  title: 'Component Library/Atoms/Avatar',
 };
 
 export default meta;
@@ -17,5 +18,6 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     avatar: avatar
   },
+  name: 'Avatar'
 };
 

@@ -1,11 +1,12 @@
 // YourComponent.stories.ts|tsx
-import favorite from '../../../assets/Favorite.svg';
+import favorite from '../assets/Favorite.svg';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Action from "./Action.tsx";
+import Action from "../components/Molecules/Action/Action.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Action> = {
+  title: 'Component Library/Molecules/Action',
   component: Action,
 };
 
@@ -17,5 +18,6 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     favouriteicon: favorite
   },
+  name: 'Action'
 };
 

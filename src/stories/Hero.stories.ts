@@ -7,6 +7,7 @@ import Hero from "../components/Atoms/HeroImage/Hero.tsx";
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Hero> = {
   component: Hero,
+  title: 'Component Library/Atoms/Hero',
 };
 
 export default meta;
@@ -17,5 +18,6 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     hero: hero
   },
+  name: 'Hero'
 };
 

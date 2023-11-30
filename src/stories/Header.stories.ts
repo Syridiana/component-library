@@ -1,12 +1,13 @@
 // YourComponent.stories.ts|tsx
-import avatar from '../../../assets/avatar.png'
+import avatar from '../assets/avatar.png'
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Header from "./Header.tsx";
+import Header from "../components/Molecules/Header/Header.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Header> = {
   component: Header,
+  title: 'Component Library/Molecules/Header',
 };
 
 export default meta;
@@ -19,5 +20,6 @@ export const FirstStory: Story = {
     titlecontent: 'Headline 5',
     subheadcontent: 'Subtitle'
   },
+  name: 'Header'
 };
 

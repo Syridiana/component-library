@@ -1,11 +1,12 @@
 // YourComponent.stories.ts|tsx
 import type { Meta, StoryObj } from '@storybook/react';
 
-import LoginForm from "./LoginForm.tsx";
+import LoginForm from "../components/Molecules/LoginForm/LoginForm.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof LoginForm> = {
   component: LoginForm,
+  title: 'Component Library/Molecules/LoginForm',
 };
 
 export default meta;
@@ -20,5 +21,6 @@ export const FirstStory: Story = {
     passlabel: 'Password',
     passtype: 'password',
   },
+  name: 'LoginForm'
 };
 

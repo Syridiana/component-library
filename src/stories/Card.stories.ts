@@ -1,14 +1,15 @@
 // YourComponent.stories.ts|tsx
-import avatar from '../../../assets/avatar.png';
-import hero from '../../../assets/hero.png';
-import favoriteIcon from '../../../assets/Favorite.svg';
+import avatar from '../assets/avatar.png';
+import hero from '../assets/hero.png';
+import favoriteIcon from '../assets/Favorite.svg';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Card from "./Card.tsx";
+import Card from "../components/Organisms/Card/Card.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Card> = {
   component: Card,
+  title: 'Component Library/Organisms/Card',
 };
 
 export default meta;

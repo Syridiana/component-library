@@ -7,12 +7,13 @@ import Button from "../components/Atoms/Button/Button.tsx";
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Button> = {
   component: Button,
+  title: 'Component Library/Atoms/Button',
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const PrimaryButton: Story = {
+export const Primary: Story = {
   args: {
     //👇 The args you need here will depend on your component
     primary: 1,
@@ -22,7 +23,7 @@ export const PrimaryButton: Story = {
 
 
 
-export const SecondaryButton: Story = {
+export const Secondary: Story = {
   args: {
     //👇 The args you need here will depend on your component
     primary: 0,

@@ -12,7 +12,7 @@ const HeroImage = styled.img.attrs<Props>((props) => ({
   width: 100%;
 `;
 
-const HeroWrapper = styled.div<Props>`
+const HeroWrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 232px;

@@ -1,11 +1,12 @@
 // YourComponent.stories.ts|tsx
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Modal from "./Modal.tsx";
+import Modal from "../components/Organisms/Modal/Modal.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Modal> = {
   component: Modal,
+  title: 'Component Library/Organisms/Modal',
 };
 
 export default meta;
@@ -23,6 +24,7 @@ export const FirstStory: Story = {
     emaillabel: 'Email',
     passlabel: 'Password',
   },
+  name: 'Modal'
 };
 
 

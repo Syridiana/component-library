@@ -2,11 +2,13 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Title from "./Title.tsx";
+import Title from "../components/Atoms/Title/Title.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Title> = {
   component: Title,
+  title: 'Component Library/Atoms/Title',
+  
 };
 
 export default meta;
@@ -17,6 +19,7 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     textnode: 'Subtitle'
   },
+  name: 'Title'
 };
 
 

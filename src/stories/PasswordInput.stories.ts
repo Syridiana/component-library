@@ -7,6 +7,7 @@ import PasswordInput from "../components/Atoms/Input/Password/PasswordInput";
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof PasswordInput> = {
   component: PasswordInput,
+  title: 'Component Library/Atoms/Input/Password',
 };
 
 export default meta;
@@ -17,8 +18,7 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     label: 'Password',
   },
-  argTypes: {
-  }
+  name: 'Password'
 };
 
 

@@ -2,11 +2,12 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import TextInput from "./TextInput.tsx";
+import TextInput from "../components/Atoms/Input/TextInput/TextInput.tsx";
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof TextInput> = {
   component: TextInput,
+  title: 'Component Library/Atoms/Input/Text',
 };
 
 export default meta;
@@ -18,6 +19,7 @@ export const FirstStory: Story = {
     type: 'email',
     label: 'Email'
   },
+  name: 'Text'
 };
 
 
