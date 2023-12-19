@@ -29,6 +29,7 @@ const Icon: React.FC<Props> = ({ color, favouriteicon }, { ...props }) => {
       whileHover={{ scale: 1.15, rotate: 15 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       whileTap={{ scale: 0.85 }}
+      style={{ width: "24px" }}
     >
       <IconStyled
         {...props}

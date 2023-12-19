@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Theme from "../../../styles/Theme";
 
 export interface ButtonPropsI extends React.PropsWithChildren {
   primary: number;
@@ -36,13 +37,15 @@ const StyledButton: React.FC<ButtonPropsI> = styled(
 
 const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   return (
-    <StyledButton
-      primary={props.primary}
-      whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-    >
-      {props.textnode}
-    </StyledButton>
+    <Theme>
+      <StyledButton
+        primary={props.primary}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        {props.textnode}
+      </StyledButton>
+    </Theme>
   );
 };
 

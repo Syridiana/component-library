@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Theme from "../../../styles/Theme";
 
 interface Props {
   textnode: string;
@@ -15,7 +16,11 @@ const SubheadStyled: React.FC<Props> = styled.h6<Props>`
 `;
 
 const Subhead: React.FC<Props> = (props: Props) => {
-  return <SubheadStyled {...props}>{props.textnode}</SubheadStyled>;
+  return (
+    <Theme>
+      <SubheadStyled {...props}>{props.textnode}</SubheadStyled>
+    </Theme>
+  );
 };
 
 export default Subhead;

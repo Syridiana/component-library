@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Theme from "../../../styles/Theme";
 
 interface Props {
   textnode: string;
@@ -17,7 +18,11 @@ const SecondaryTextStyled: React.FC<Props> = styled.p<Props>`
 `;
 
 const SecondaryText: React.FC<Props> = (props: Props) => {
-  return <SecondaryTextStyled {...props}>{props.textnode}</SecondaryTextStyled>;
+  return (
+    <Theme>
+      <SecondaryTextStyled {...props}>{props.textnode}</SecondaryTextStyled>
+    </Theme>
+  );
 };
 
 export default SecondaryText;
