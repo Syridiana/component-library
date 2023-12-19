@@ -1,14 +1,14 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
-  textnode: string
+  textnode: string;
 }
 
 const TitleStyled: React.FC<Props> = styled.h5<Props>`
-  color: #646565;
-  font-family: Open Sans;
-  font-size: 20px;
+  color: ${(props) => props.theme.colors.black};
+  font-family: ${(props) => props.theme.primaryFont};
+  font-size: ${(props) => props.theme.fontSizes.medium};
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
@@ -16,7 +16,7 @@ const TitleStyled: React.FC<Props> = styled.h5<Props>`
 `;
 
 const Title: React.FC<Props> = (props: Props) => {
-    return <TitleStyled {...props}>{props.textnode}</TitleStyled>;
-  };
+  return <TitleStyled {...props}>{props.textnode}</TitleStyled>;
+};
 
 export default Title;

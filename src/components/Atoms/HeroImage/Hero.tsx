@@ -1,8 +1,8 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
-  hero: string
+  hero: string;
 }
 
 const HeroImage = styled.img.attrs<Props>((props) => ({
@@ -20,6 +20,8 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 232px;
+  border-top-right-radius: ${(props) => props.theme.outerBorderRadius};
+  border-top-left-radius: ${(props) => props.theme.outerBorderRadius};
 `;
 
 const Hero: React.FC<Props> = (props: Props) => {
@@ -27,8 +29,7 @@ const Hero: React.FC<Props> = (props: Props) => {
     <HeroWrapper {...props}>
       <HeroImage hero={props.hero} />
     </HeroWrapper>
-  )
+  );
 };
-
 
 export default Hero;

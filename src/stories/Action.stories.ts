@@ -16,7 +16,9 @@ type Story = StoryObj<typeof Action>;
 export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
-    favouriteicon: favorite
+    favouriteicon: favorite,
+    btnOne: 'Action 1',
+    btnTwo: 'Action 2'
   },
   name: 'Action'
 };

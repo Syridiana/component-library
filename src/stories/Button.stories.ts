@@ -17,7 +17,7 @@ export const Primary: Story = {
   args: {
     //👇 The args you need here will depend on your component
     primary: 1,
-    textnode: 'LOG IN'
+    textnode: 'Log In'
   },
 };
 
@@ -27,6 +27,6 @@ export const Secondary: Story = {
   args: {
     //👇 The args you need here will depend on your component
     primary: 0,
-    textnode: 'SIGN UP'
+    textnode: 'Sign Up'
   },
 };

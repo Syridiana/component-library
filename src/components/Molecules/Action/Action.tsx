@@ -4,12 +4,14 @@ import Button from "../../Atoms/Button/Button";
 import Icon from "../../Atoms/Favorite/Icon";
 
 interface Props {
-  favouriteicon: string
+  favouriteicon: string,
+  btnOne: string,
+  btnTwo: string
 }
 
 const StyledAction: React.FC<Props> = styled.div<Props>`
   display: flex;
-  padding: 12px 20px 16px 8px;
+  padding: 12px 28px 22px 26px;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -17,13 +19,18 @@ const StyledAction: React.FC<Props> = styled.div<Props>`
   align-items: center;
 `;
 
+const StyledContainer: React.FC = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 const Action: React.FC<Props> = (props: Props) => {
     return (
       <StyledAction {...props}>
-        <div>
-          <Button primary={0} textnode={'ACTION 1'} />
-          <Button primary={0} textnode={'ACTION 2'} />
-        </div>
+        <StyledContainer>
+          <Button primary={0} textnode={props.btnOne} />
+          <Button primary={0} textnode={props.btnTwo} />
+        </StyledContainer>
         <Icon favouriteicon={props.favouriteicon} />
       </StyledAction>
     );

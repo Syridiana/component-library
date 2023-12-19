@@ -16,9 +16,9 @@ export const FirstStory: Story = {
   args: {
     //👇 The args you need here will depend on your component
     primarybtn: 1,
-    textnodebtn1: 'LOG IN',
+    textnodebtn1: 'Log In',
     primary: 0,
-    textnodebtn2: 'SIGN UP',
+    textnodebtn2: 'Sign Up',
   },
   name: 'ActionForm'
 };

@@ -17,9 +17,9 @@ export const FirstStory: Story = {
     //👇 The args you need here will depend on your component
     titlecontent: 'Welcome Back',
     primarybtn: 1,
-    textnodebtn1: 'LOG IN',
+    textnodebtn1: 'Log In',
     primary: 0,
-    textnodebtn2: 'SIGN UP',
+    textnodebtn2: 'Sign Up',
     subheadcontent: 'Please complete Email and Password',
     emaillabel: 'Email',
     passlabel: 'Password',

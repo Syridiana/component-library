@@ -1,14 +1,13 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
-  textnode: string
+  textnode: string;
 }
 
 const SubheadStyled: React.FC<Props> = styled.h6<Props>`
-  color: #646565;
-  font-family: Open Sans;
-  font-size: 14px;
+  color: ${(props) => props.theme.colors.darkGrey};
+  font-size: ${(props) => props.theme.fontSizes.small};
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
@@ -16,7 +15,7 @@ const SubheadStyled: React.FC<Props> = styled.h6<Props>`
 `;
 
 const Subhead: React.FC<Props> = (props: Props) => {
-    return <SubheadStyled {...props}>{props.textnode}</SubheadStyled>;
-  };
+  return <SubheadStyled {...props}>{props.textnode}</SubheadStyled>;
+};
 
 export default Subhead;
