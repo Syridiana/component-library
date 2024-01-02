@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../../Atoms/Title/Title";
 import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
 import { ButtonPropsI } from "../../Atoms/Button/Button";
 import { motion } from "framer-motion";
 import close from "../../../assets/close.svg";
@@ -37,13 +36,15 @@ const StyledHeader: React.FC<Props> = styled.div`
   box-sizing: border-box;
 `;
 
-const style = {
-  position: "absolute",
-  width: 375,
-  bgcolor: "background.paper",
-  border: "none",
-  boxShadow: "0px 0px 25px 10px rgba(0, 0, 0, 0.10)",
-};
+const StyledBox: React.FC<Props> = styled.div`
+  position: absolute;
+  width: 375px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.1);
+  border-radius: ${(props) => props.theme.outerBorderRadius};
+  padding: 10px 10px 0px 10px;
+`;
 
 const ModalElement: React.FC<Props> = (props: Props) => {
   const [open, setOpen] = React.useState(false);
@@ -60,7 +61,7 @@ const ModalElement: React.FC<Props> = (props: Props) => {
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         <Slide in={open} direction="up" mountOnEnter unmountOnExit>
-          <Box sx={style}>
+          <StyledBox {...props}>
             <StyledHeader {...props}>
               <Title textnode={props.titlecontent} />
               <motion.div
@@ -77,7 +78,7 @@ const ModalElement: React.FC<Props> = (props: Props) => {
             </StyledHeader>
             <LoginForm {...props} />
             <ActionForm {...props} />
-          </Box>
+          </StyledBox>
         </Slide>
       </Modal>
     </Theme>
