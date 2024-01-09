@@ -17,6 +17,8 @@ export const InputStyled: React.FC<Theme> = styled.input`
     outline: ${(props) => props.theme.colors.secondary} !important;
     box-shadow: 0px 0px 0px 1px ${(props) => props.theme.colors.secondary} inset;
   }
+
+  transition: border 4s 1s;
 `;
 
 const LabelCSS: React.FC<Theme> = styled.div`
