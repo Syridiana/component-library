@@ -1,47 +1,56 @@
-import React, { InputHTMLAttributes, useState } from "react";
-import styled from 'styled-components';
-import TextField from '@mui/material/TextField';
-import { InputAdornment, IconButton } from "@mui/material";
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import React, { useState } from "react";
+import { IconButton } from "@mui/material";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import { LabelStyled, InputStyled } from "../StyledInput";
 
-export interface PassPropsI  {
-  type: string,
-  label: string,
-  InputProps?: InputProp,
+export interface PassPropsI {
+  type: string;
+  label: string;
 }
-
-interface InputProp extends InputHTMLAttributes<HTMLInputElement>{
-  endAdornment: JSX.Element
-}
-
-const InputStyled: React.FC<PassPropsI> = styled(TextField)<PassPropsI>`
-  border-radius: 4px!important;
-`;
 
 const PasswordInput: React.FC<PassPropsI> = (props: PassPropsI) => {
-    const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [inputType, setInputType] = useState<string>("password");
 
-    const EndAdornment = () => {
-      return <InputAdornment position="end">
-        <IconButton 
-          onClick={() => setIsVisible(!isVisible)} 
-          style={{ border:"none",  outline:"none"  }}>
-          {isVisible ? <VisibilityOffOutlinedIcon /> : <RemoveRedEyeOutlinedIcon/> }
-        </IconButton>
-      </InputAdornment>
+  const clickHandler = () => {
+    setIsVisible(!isVisible);
+    if (inputType === "password") {
+      setInputType("text");
+    } else {
+      setInputType("password");
     }
-
-    return <InputStyled 
-                fullWidth 
-                type={isVisible ? "text" : "password"} 
-                variant="filled" label={props.label}
-                InputProps={{
-                  endAdornment: (
-                    <EndAdornment visible={isVisible} setVisible={setIsVisible}/>
-                  )
-                }}
-              />;
   };
+
+  const EndAdornment = () => {
+    return (
+      <IconButton
+        onClick={clickHandler}
+        style={{
+          border: "none",
+          outline: "none",
+          position: "relative",
+          top: "-1.55em",
+          left: "89%",
+          scale: "0.9",
+        }}
+      >
+        {isVisible ? (
+          <VisibilityOffOutlinedIcon />
+        ) : (
+          <RemoveRedEyeOutlinedIcon />
+        )}
+      </IconButton>
+    );
+  };
+
+  return (
+    <div>
+      <LabelStyled>{props.label}</LabelStyled>
+      <InputStyled type={inputType} />
+      <EndAdornment />
+    </div>
+  );
+};
 
 export default PasswordInput;
