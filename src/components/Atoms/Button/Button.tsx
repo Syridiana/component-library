@@ -51,7 +51,7 @@ const StyledButtonHover: React.FC<ButtonPropsI> = styled.div<ButtonPropsI>`
 
 const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   const container = useRef<HTMLDivElement>(null);
-  const unYani = useRef<HTMLDivElement>(null);
+  const hoverRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();
 
   const { contextSafe } = useGSAP({ scope: container });
@@ -59,13 +59,13 @@ const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   //useGSAP(() => {});
 
   const handleMouseEnter = contextSafe((e: MouseEvent) => {
-    if(container.current && unYani.current){
-      const yaniRef = container.current.getBoundingClientRect();
-      const unYaniRef = unYani.current.getBoundingClientRect();
-      gsap.to(".yani", {
+    if(container.current && hoverRef.current){
+      const otherHoverRef = container.current.getBoundingClientRect();
+      const myHoverRef = hoverRef.current.getBoundingClientRect();
+      gsap.to(".hover", {
         duration: 0.5,
-        x: e.pageX - yaniRef.left - unYaniRef.width / 2,
-        y: e.pageY - yaniRef.top - unYaniRef.width / 2,
+        x: e.pageX - otherHoverRef.left - myHoverRef.width / 2,
+        y: e.pageY - otherHoverRef.top - myHoverRef.width / 2,
         scale: 1,
       });
   
@@ -91,7 +91,7 @@ const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
 
   const handleMouseLeave = contextSafe((e: MouseEvent) => {
     e.stopPropagation();
-    gsap.to(".yani", {
+    gsap.to(".hover", {
       duration: 0.5,
       scale: 0,
     });
@@ -122,8 +122,8 @@ const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
       >
         <StyledButtonHover
           primary={props.primary}
-          className="yani"
-          ref={unYani}
+          className="hover"
+          ref={hoverRef}
         ></StyledButtonHover>
         <StyledButton primary={props.primary} style={{ zIndex: "3" }}>
           {props.textnode}
