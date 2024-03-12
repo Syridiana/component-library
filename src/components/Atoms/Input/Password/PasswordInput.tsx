@@ -3,6 +3,7 @@ import { IconButton } from "@mui/material";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import { LabelStyled, InputStyled } from "../StyledInput";
+import Theme from "../../../../styles/Theme";
 
 export interface PassPropsI {
   type: string;
@@ -45,11 +46,13 @@ const PasswordInput: React.FC<PassPropsI> = (props: PassPropsI) => {
   };
 
   return (
-    <div>
-      <LabelStyled>{props.label}</LabelStyled>
-      <InputStyled type={inputType} />
-      <EndAdornment />
-    </div>
+    <Theme>
+      <div>
+        <LabelStyled>{props.label}</LabelStyled>
+        <InputStyled type={inputType} />
+        <EndAdornment />
+      </div>
+    </Theme>
   );
 };
 

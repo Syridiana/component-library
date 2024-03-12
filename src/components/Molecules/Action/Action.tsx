@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components'; 
 import Button from "../../Atoms/Button/Button";
 import Icon from "../../Atoms/Favorite/Icon";
+import Theme from "../../../styles/Theme";
 
 interface Props {
   favouriteicon: string,
@@ -26,13 +27,15 @@ const StyledContainer: React.FC = styled.div`
 
 const Action: React.FC<Props> = (props: Props) => {
     return (
-      <StyledAction {...props}>
-        <StyledContainer>
-          <Button primary={0} textnode={props.btnOne} />
-          <Button primary={0} textnode={props.btnTwo} />
-        </StyledContainer>
-        <Icon favouriteicon={props.favouriteicon} />
-      </StyledAction>
+      <Theme>
+        <StyledAction {...props}>
+          <StyledContainer>
+            <Button primary={0} textnode={props.btnOne} />
+            <Button primary={0} textnode={props.btnTwo} />
+          </StyledContainer>
+          <Icon favouriteicon={props.favouriteicon} />
+        </StyledAction>
+      </Theme>
     );
   };
 

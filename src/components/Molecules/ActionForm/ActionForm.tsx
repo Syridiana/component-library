@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../Atoms/Button/Button";
+import Theme from "../../../styles/Theme";
 
 interface Props extends React.PropsWithChildren {
   primarybtn: number;
@@ -23,10 +24,12 @@ const StyledAction: React.FC<Props> = styled.div`
 
 const ActionForm: React.FC<Props> = (props: Props) => {
   return (
-    <StyledAction {...props}>
-      <Button textnode={props.textnodebtn2} primary={props.primary} />
-      <Button textnode={props.textnodebtn1} primary={props.primarybtn} />
-    </StyledAction>
+    <Theme>
+      <StyledAction {...props}>
+        <Button textnode={props.textnodebtn2} primary={props.primary} />
+        <Button textnode={props.textnodebtn1} primary={props.primarybtn} />
+      </StyledAction>
+    </Theme>
   );
 };
 
